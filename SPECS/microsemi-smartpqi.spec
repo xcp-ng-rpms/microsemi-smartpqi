@@ -17,7 +17,7 @@ Source0: https://code.citrite.net/rest/archive/latest/projects/XS/repos/driver-m
 
 Provides: gitsha(https://code.citrite.net/rest/archive/latest/projects/XS/repos/driver-microsemi-smartpqi/archive?at=1.2.10_025-2&format=tgz&prefix=driver-microsemi-smartpqi-1.2.10_025#/microsemi-smartpqi-1.2.10_025.tar.gz) = 84282f5ac74b855cd7de516e248280205c2a71d8
 
-
+BuildRequires: gcc
 BuildRequires: kernel-devel
 Provides: vendor-driver
 Requires: kernel-uname-r = %{kernel_version}
