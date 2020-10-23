@@ -9,7 +9,7 @@
 Summary: %{vendor_name} %{driver_name} device drivers
 Name: %{vendor_label}-%{driver_name}
 Version: 1.2.10_025
-Release: 2
+Release: 2%{?dist}
 License: GPL
 
 Source0: https://code.citrite.net/rest/archive/latest/projects/XS/repos/driver-microsemi-smartpqi/archive?at=1.2.10_025-2&format=tgz&prefix=driver-microsemi-smartpqi-1.2.10_025#/microsemi-smartpqi-1.2.10_025.tar.gz
