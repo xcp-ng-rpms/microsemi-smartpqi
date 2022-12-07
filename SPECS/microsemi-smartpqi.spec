@@ -1,8 +1,8 @@
-%global package_speccommit 229b584997ae57489cd63e9ac3adbb8dd4bc5f97
-%global usver 1.2.10_025
-%global xsver 4
+%global package_speccommit a47856d7a324308d272308edc54bc8f8bc46d251
+%global usver 2.1.18_045
+%global xsver 1
 %global xsrel %{xsver}%{?xscount}%{?xshash}
-%global package_srccommit 1.2.10_025-2
+%global package_srccommit 2.1.18_045
 
 %define vendor_name Microsemi
 %define vendor_label microsemi
@@ -18,10 +18,10 @@
 
 Summary: %{vendor_name} %{driver_name} device drivers
 Name: %{vendor_label}-%{driver_name}
-Version: 1.2.10_025
+Version: 2.1.18_045
 Release: %{?xsrel}%{?dist}
 License: GPL
-Source0: microsemi-smartpqi-1.2.10_025.tar.gz
+Source0: microsemi-smartpqi-2.1.18_045.tar.gz
 
 BuildRequires: gcc
 BuildRequires: kernel-devel
@@ -42,7 +42,7 @@ version %{kernel_version}
 %{?_cov_prepare}
 
 %build
-%{?_cov_wrap} %{make_build} -C /lib/modules/%{kernel_version}/build M=$(pwd) KSRC=/lib/modules/%{kernel_version}/build modules EXTRA_CFLAGS+=-DRHEL8
+%{?_cov_wrap} %{make_build} -C /lib/modules/%{kernel_version}/build M=$(pwd) KSRC=/lib/modules/%{kernel_version}/build modules EXTRA_CFLAGS+=-DKCLASS4C
 
 %install
 %{?_cov_wrap} %{__make} %{?_smp_mflags} -C /lib/modules/%{kernel_version}/build M=$(pwd) INSTALL_MOD_PATH=%{buildroot} INSTALL_MOD_DIR=%{module_dir} DEPMOD=/bin/true modules_install
@@ -70,6 +70,9 @@ find %{buildroot}/lib/modules/%{kernel_version} -name "*.ko" -type f | xargs chm
 
 
 %changelog
+* Sun Sep 11 2022 Zhuangxuan Fei <zhuangxuan.fei@citrix.com> - 2.1.18_045-1
+- CP-40167: Upgrade smartpqi driver to version 2.1.18_045
+
 * Mon Feb 14 2022 Ross Lagerwall <ross.lagerwall@citrix.com> - 1.2.10_025-4
 - CP-38416: Enable static analysis
 
