@@ -1,8 +1,8 @@
-%global package_speccommit a47856d7a324308d272308edc54bc8f8bc46d251
-%global usver 2.1.18_045
+%global package_speccommit 81d802f49489c03dc87419334bf0278d54c5c891
+%global usver 2.1.20_035
 %global xsver 1
 %global xsrel %{xsver}%{?xscount}%{?xshash}
-%global package_srccommit 2.1.18_045
+%global package_srccommit 2.1.20_035
 
 %define vendor_name Microsemi
 %define vendor_label microsemi
@@ -18,10 +18,10 @@
 
 Summary: %{vendor_name} %{driver_name} device drivers
 Name: %{vendor_label}-%{driver_name}
-Version: 2.1.18_045
+Version: 2.1.20_035
 Release: %{?xsrel}%{?dist}
 License: GPL
-Source0: microsemi-smartpqi-2.1.18_045.tar.gz
+Source0: microsemi-smartpqi-2.1.20_035.tar.gz
 
 BuildRequires: kernel-devel
 %{?_cov_buildrequires}
@@ -69,6 +69,9 @@ find %{buildroot}/lib/modules/%{kernel_version} -name "*.ko" -type f | xargs chm
 
 
 %changelog
+* Wed Dec 07 2022 Zhuangxuan Fei <zhuangxuan.fei@cloud.com> - 2.1.20_035-1
+- CP-41020: Upgrade smartpqi driver to version 2.1.20_035
+
 * Sun Sep 11 2022 Zhuangxuan Fei <zhuangxuan.fei@citrix.com> - 2.1.18_045-1
 - CP-40167: Upgrade smartpqi driver to version 2.1.18_045
 
