@@ -1,8 +1,8 @@
-%global package_speccommit 3a81bb6627ae655f6265712995979062cc337e95
-%global usver 2.1.28_025
+%global package_speccommit 69b0f427f635081417f19d50901e315eb5e2e42c
+%global usver 2.1.30_031
 %global xsver 1
 %global xsrel %{xsver}%{?xscount}%{?xshash}
-%global package_srccommit 2.1.28_025
+%global package_srccommit 2.1.30_031
 
 %define vendor_name Microsemi
 %define vendor_label microsemi
@@ -18,10 +18,10 @@
 
 Summary: %{vendor_name} %{driver_name} device drivers
 Name: %{vendor_label}-%{driver_name}
-Version: 2.1.28_025
+Version: 2.1.30_031
 Release: %{?xsrel}%{?dist}
 License: GPL
-Source0: microsemi-smartpqi-2.1.28_025.tar.gz
+Source0: microsemi-smartpqi-2.1.30_031.tar.gz
 
 BuildRequires: gcc
 BuildRequires: kernel-devel
@@ -70,6 +70,9 @@ find %{buildroot}/lib/modules/%{kernel_version} -name "*.ko" -type f | xargs chm
 
 
 %changelog
+* Thu Jul 11 2024 Stephen Cheng <stephen.cheng@cloud.com> - 2.1.30_031-1
+- CP-50243: Upgrade smartpqi driver to version 2.1.30_031
+
 * Sun Apr 07 2024 Stephen Cheng <stephen.cheng@cloud.com> - 2.1.28_025-1
 - CP-48683: Upgrade smartpqi driver to version 2.1.28_025
 
