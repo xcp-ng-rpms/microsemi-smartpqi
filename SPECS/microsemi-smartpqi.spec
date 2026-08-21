@@ -19,7 +19,10 @@
 Summary: %{vendor_name} %{driver_name} device drivers
 Name: %{vendor_label}-%{driver_name}
 Version: 2.1.30_031
-Release: %{?xsrel}%{?dist}
+Release: %{?xsrel}.1%{?dist}
+# Built against new kABI after cip rebase
+Requires: xcpng-kernel-kabi = 4.19.325-cip134+
+
 License: GPL
 Source0: microsemi-smartpqi-2.1.30_031.tar.gz
 
@@ -70,6 +73,9 @@ find %{buildroot}/lib/modules/%{kernel_version} -name "*.ko" -type f | xargs chm
 
 
 %changelog
+* Mon Aug 31 2026 Quentin Casasnovas <quentin.casasnovas@vates.tech> - 2.1.30_031-1.1
+- Rebuild for kernel v4.19.325-cip134
+
 * Thu Jul 11 2024 Stephen Cheng <stephen.cheng@cloud.com> - 2.1.30_031-1
 - CP-50243: Upgrade smartpqi driver to version 2.1.30_031
 
